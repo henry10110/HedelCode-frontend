@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MarcoPrincipalComponent } from './marco-principal/marco-principal.component';
 
 
 
 @NgModule({
-  declarations: [], //declaramos los componentes internos
-  exports: [], //para exportar componentes, pero solo los necesarios
+  declarations: [
+    MarcoPrincipalComponent
+  ], //declaramos los componentes internos
+  exports: [MarcoPrincipalComponent], //para exportar componentes, pero solo los necesarios
   imports: [
     CommonModule //importar modulos necesarios como FormModule
   ],
