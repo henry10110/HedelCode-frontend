@@ -1,0 +1,22 @@
+.main {
+    background-color: #262626;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.foot {
+    padding: 40px;
+    background-color: #464646;
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+}
