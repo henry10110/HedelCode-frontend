@@ -1,0 +1,42 @@
+.datos-perfil {
+    background-color: #d9d9d9;
+    height: 25rem;
+}
+
+.head {
+    background-color: #464646;
+}
+
+.info-user {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.desc-user {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.body {
+    background-color: #464646;
+}
+
+.btn-search {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar {
+    background-color: #996a5f !important;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #d9d9d9;
+}
