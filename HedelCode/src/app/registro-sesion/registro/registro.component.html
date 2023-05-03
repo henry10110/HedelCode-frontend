@@ -1,7 +1,7 @@
 <div class="principal">
     <div class="head">
         <img class="logoimg" src="../../../assets/img/LogoF.png" style="width: 154px; height: 72px;" alt="logo">
-        <button type="button" class="btn btn-outline-danger btn-cancel">Cancelar</button>
+        <button type="button" [routerLink]="['/inicio']" class="btn btn-outline-danger btn-cancel">Cancelar</button>
     </div>
 
     <div class="body">
@@ -31,7 +31,7 @@
             </div>
             <div style="display: flex; justify-content: space-between;">
                 <a href="#">Registrese con Facebook</a>
-                <a href="#">Iniciar sesion</a>
+                <a [routerLink]="['/sesion']"  >Iniciar sesion</a>
             </div>
             <div style="display: flex; justify-content: center;">
                 <button type="button" class="btn btn-secondary"

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrincipalUsuarioComponent } from './principal-usuario/principal-usuario.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { PrincipalUsuarioComponent } from './principal-usuario/principal-usuario
   ],
   exports: [PrincipalUsuarioComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: []
 })

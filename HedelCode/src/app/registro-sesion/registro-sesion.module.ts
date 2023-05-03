@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
 import { SesionComponent } from './sesion/sesion.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { SesionComponent } from './sesion/sesion.component';
     SesionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: []
 })

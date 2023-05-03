@@ -43,7 +43,7 @@
                     <a class="navbar-brand" href="#">Snippets</a>
                 </div>
                 <div class="container-md btn-search">
-                        <button class="btn btn-primary" type="submit">Your Work</button>
+                        <button class="btn btn-primary" [routerLink]="['/inicio']" type="submit">Your Work</button>
                 </div>
             </div>
         </nav>
@@ -60,7 +60,7 @@
         <div>
             <h5>info...</h5>
             <h5>info...</h5>
-            <a href="#">about us</a>
+            <a [routerLink]="['/promocion']" >about us</a>
         </div>
         <div>
             <img src="../../../assets/img/LogoF.png" style="width: 154px; height: 72px;" alt="logo">            

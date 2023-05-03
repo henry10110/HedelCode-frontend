@@ -2,7 +2,7 @@
     <div class="head">
         <img src="../../../assets/img/LogoF.png" style="width: 231px; height: 108px;" alt="logo">
         <div style="display: flex; align-items: center;">
-            <button class="btn btn-primary">Continuar Gratis</button>
+            <button class="btn btn-primary" [routerLink]="['/inicio']" >Continuar Gratis</button>
         </div>
     </div>
     <div class="body py-5">
@@ -62,6 +62,6 @@
     </div>
     <div class="foot">
         <p>info...</p>
-        <a href="#">about us</a>
+        <a [routerLink]="['/promocion']" >about us</a>
     </div>
 </div>

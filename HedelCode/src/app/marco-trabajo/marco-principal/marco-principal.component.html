@@ -3,8 +3,8 @@
     <div class="header">
         <img class="logoimg" src="../../../assets/img/LogoF.png" style="width: 154px; height: 72px;" alt="logo">
         <div>
-            <button class="btn btn-success btn-borderles" style="margin-right: 20px;" type="submit">About Us</button>
-            <button class="btn btn-success" style="margin-right: 40px; background-color: #982121;" type="submit">Control
+            <button class="btn btn-success btn-borderles" [routerLink]="['/promocion']" style="margin-right: 20px;" type="submit">About Us</button>
+            <button class="btn btn-success" [routerLink]="['/controlUsuario']" style="margin-right: 40px; background-color: #982121;" type="submit">Control
                 Usuario</button>
         </div>
 
@@ -18,12 +18,12 @@
                 <p class="parr"><small>Titulo de proyecto</small></p>
             </div>
             <div class="navbar-brand">
-                <button class="btn btn-success" style="background-color: #982121;" type="submit">Sing Up</button>
-                <button class="btn btn-success" style="margin-left: 5px; background-color: #212198;" type="submit">Log
+                <button class="btn btn-success" [routerLink]="['/registro']" style="background-color: #982121;" type="submit">Sing Up</button>
+                <button class="btn btn-success" [routerLink]="['/sesion']" style="margin-left: 5px; background-color: #212198;" type="submit">Log
                     In</button>
             </div>
             <div class="navbar-brand">
-                <button class="btn btn-success" style="background-color: #620581;" type="submit">+ Snippet</button>
+                <button class="btn btn-success" [routerLink]="['/snippets']" style="background-color: #620581;" type="submit">+ Snippet</button>
             </div>
             <div class="navbar-brand">
                 <button class="btn btn-success" style="background-color: #982121;" type="submit">Save</button>
@@ -48,7 +48,7 @@
                 </div>
 
             </div>
-            <button class="btn-borderles" style="grid-row: 11 / 12; float: left; text-align: left;">
+            <button class="btn-borderles" [routerLink]="['/planes']" style="grid-row: 11 / 12; float: left; text-align: left;">
                 <i class="fa-sharp fa-solid fa-star"></i>Vuelvete premium
             </button>
             <button class="btn-borderles" style="grid-row: 12 / 13; float: left; text-align: left;">

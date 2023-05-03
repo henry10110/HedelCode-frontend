@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarcoSnippetComponent } from './marco-snippet/marco-snippet.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { MarcoSnippetComponent } from './marco-snippet/marco-snippet.component';
   ],
   exports: [MarcoSnippetComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: []
 })

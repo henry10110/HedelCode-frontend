@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarcoPrincipalComponent } from './marco-principal/marco-principal.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { MarcoPrincipalComponent } from './marco-principal/marco-principal.compo
   ], //declaramos los componentes internos
   exports: [MarcoPrincipalComponent], //para exportar componentes, pero solo los necesarios
   imports: [
-    CommonModule //importar modulos necesarios como FormModule
+    CommonModule, //importar modulos necesarios como FormModule
+    RouterModule
   ],
   providers: [] //para los servicios
 })

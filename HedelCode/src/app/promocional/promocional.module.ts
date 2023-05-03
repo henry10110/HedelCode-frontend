@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginaPromComponent } from './pagina-prom/pagina-prom.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { PaginaPromComponent } from './pagina-prom/pagina-prom.component';
   ],
   exports: [PaginaPromComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: []
 })
