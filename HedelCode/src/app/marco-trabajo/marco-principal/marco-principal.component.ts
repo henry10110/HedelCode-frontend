@@ -10,20 +10,28 @@ export class MarcoPrincipalComponent {
   codigoHTML: string = '';
   codigoCSS: string = '';
   codigoJS: string = '';
-  contenido = `<h1>que tal</h1>`;
+  contenido = '';
 
-  compilar(){
+  compilar() {
     this.contenido = `
-    <html>
-      <head>
-        <style>${this.codigoCSS}</style>
-      </head>
-      <body>
-        ${this.codigoHTML}
-        <script>${this.codigoJS}</script>
-      </body>
-    </html>
-  `;
+      <html>
+        <head>
+          <style>${this.codigoCSS}</style>
+        </head>
+        <body>
+          ${this.codigoHTML}
+          <script>${this.codigoJS}</script>
+        </body>
+      </html>
+    `;
+  
+    // Encuentra el iframe en el DOM
+    const iframe = document.getElementById('iframeResult');
+  
+    // Establece el atributo srcdoc del iframe con el contenido generado
+    if (iframe) {
+      (iframe as HTMLIFrameElement).srcdoc = this.contenido;
+    }
   }
 
 }

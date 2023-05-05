@@ -62,7 +62,8 @@ textarea {
 
 .cuadro {
     margin: 3px;
-    border-radius: 3px;
+    border-radius: 6px;
+    background-color: #fff !important;
 }
 
 .btn {
