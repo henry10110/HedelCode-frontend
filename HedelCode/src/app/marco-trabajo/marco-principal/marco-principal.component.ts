@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class MarcoPrincipalComponent {
 
+  codigoHTML: string = '';
+  codigoCSS: string = '';
+  codigoJS: string = '';
+  contenido = `<h1>que tal</h1>`;
+
+  compilar(){
+    this.contenido = `
+    <html>
+      <head>
+        <style>${this.codigoCSS}</style>
+      </head>
+      <body>
+        ${this.codigoHTML}
+        <script>${this.codigoJS}</script>
+      </body>
+    </html>
+  `;
+  }
+
 }

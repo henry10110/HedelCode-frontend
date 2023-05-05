@@ -9,6 +9,7 @@ import { PlanesModule } from './planes/planes.module';
 import { PromocionalModule } from './promocional/promocional.module';
 import { RegistroSesionModule } from './registro-sesion/registro-sesion.module';
 import { SnippetModule } from './snippet/snippet.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SnippetModule } from './snippet/snippet.module';
     PromocionalModule,
     ControlUsuarioModule,
     SnippetModule,
-    PlanesModule
+    PlanesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

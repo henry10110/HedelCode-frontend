@@ -1,0 +1,15 @@
+ul {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -20px;
+}
+
+.sub-lista {
+    display: none;
+}
+

@@ -3,8 +3,10 @@
     <div class="header">
         <img class="logoimg" src="../../../assets/img/LogoF.png" style="width: 154px; height: 72px;" alt="logo">
         <div>
-            <button class="btn btn-success btn-borderles" [routerLink]="['/promocion']" style="margin-right: 20px;" type="submit">About Us</button>
-            <button class="btn btn-success" [routerLink]="['/controlUsuario']" style="margin-right: 40px; background-color: #982121;" type="submit">Control
+            <button class="btn btn-success btn-borderles" [routerLink]="['/promocion']" style="margin-right: 20px;"
+                type="submit">About Us</button>
+            <button class="btn btn-success" [routerLink]="['/controlUsuario']"
+                style="margin-right: 40px; background-color: #982121;" type="submit">Control
                 Usuario</button>
         </div>
 
@@ -18,17 +20,20 @@
                 <p class="parr"><small>Titulo de proyecto</small></p>
             </div>
             <div class="navbar-brand">
-                <button class="btn btn-success" [routerLink]="['/registro']" style="background-color: #982121;" type="submit">Sing Up</button>
-                <button class="btn btn-success" [routerLink]="['/sesion']" style="margin-left: 5px; background-color: #212198;" type="submit">Log
+                <button class="btn btn-success" [routerLink]="['/registro']" style="background-color: #982121;"
+                    type="submit">Sing Up</button>
+                <button class="btn btn-success" [routerLink]="['/sesion']"
+                    style="margin-left: 5px; background-color: #212198;" type="submit">Log
                     In</button>
             </div>
             <div class="navbar-brand">
-                <button class="btn btn-success" [routerLink]="['/snippets']" style="background-color: #620581;" type="submit">+ Snippet</button>
+                <button class="btn btn-success" [routerLink]="['/snippets']" style="background-color: #620581;"
+                    type="submit">+ Snippet</button>
             </div>
             <div class="navbar-brand">
                 <button class="btn btn-success" style="background-color: #982121;" type="submit">Save</button>
-                <button class="btn btn-success" style="margin-left: 5px; background-color: #982121;"
-                    type="submit">Run</button>
+                <button class="btn btn-success" (click)="compilar()"
+                    style="margin-left: 5px; background-color: #982121;" type="submit">Run</button>
             </div>
         </div>
     </nav>
@@ -41,14 +46,15 @@
                 <p style="color:aliceblue">esta es la descripcion actual<small></small></p>
             </div>
             <h5 style="color: aliceblue; padding-top: 5px;">Assets</h5>
-            <div style="grid-row: 5 / 11;">
+            <div style="grid-row: 5 / 11; overflow: auto;">
 
-                <div style="height: 100%; background-color: #464646;">
-
+                <div style="height: 100%; background-color: #464646; overflow: auto;">
+                    <app-gestor-archivos></app-gestor-archivos>
                 </div>
 
             </div>
-            <button class="btn-borderles" [routerLink]="['/planes']" style="grid-row: 11 / 12; float: left; text-align: left;">
+            <button class="btn-borderles" [routerLink]="['/planes']"
+                style="grid-row: 11 / 12; float: left; text-align: left;">
                 <i class="fa-sharp fa-solid fa-star"></i>Vuelvete premium
             </button>
             <button class="btn-borderles" style="grid-row: 12 / 13; float: left; text-align: left;">
@@ -58,20 +64,32 @@
         </section>
 
         <section class="cuadros" style="grid-column: 3 / 13;">
-            <form class="cuadro">
-                <textarea></textarea>
+            <form class="cuadro ">
+                <div class="form-floating">
+                    <textarea class="form-control" [(ngModel)]="codigoHTML" [ngModelOptions]="{standalone: true}"
+                        id="floatingTextarea2" placeholder="Leave a comment here"></textarea>
+                    <label style="color: #FFF;" for="floatingTextarea2">HTML</label>
+                </div>
             </form>
 
-            <form class="cuadro">
-                <textarea></textarea>
+            <form class="cuadro ">
+                <div class="form-floating">
+                    <textarea class="form-control" [(ngModel)]="codigoCSS" [ngModelOptions]="{standalone: true}"
+                        id="floatingTextarea2" placeholder="Leave a comment here"></textarea>
+                    <label style="color: #FFF;" for="floatingTextarea2">CSS</label>
+                </div>
             </form>
 
-            <form class="cuadro">
-                <textarea></textarea>
+            <form class="cuadro ">
+                <div class="form-floating">
+                    <textarea class="form-control" [(ngModel)]="codigoJS" [ngModelOptions]="{standalone: true}"
+                        id="floatingTextarea2" placeholder="Leave a comment here"></textarea>
+                    <label style="color: #FFF;" for="floatingTextarea2">JavaScript</label>
+                </div>
             </form>
 
             <div class="cuadro">
-                <iframe src="" frameborder="0" width="100%" height="100%" style="background-color: #3e1e49;"></iframe>
+                <iframe [srcdoc]="contenido" frameborder="0" width="100%" height="100%" style="background-color: #bbb;"></iframe>
             </div>
 
 
