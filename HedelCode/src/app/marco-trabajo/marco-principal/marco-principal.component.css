@@ -47,7 +47,29 @@ textarea {
     background-color: #000 !important;
     border: none;
     color: #eee !important;
+    caret-color: white !important;
 }
+
+code {
+    background-color: #000;
+    color:lightskyblue;
+}
+
+.form-floating {
+    position: relative;
+    background-color: #000 !important;
+  }
+  
+.highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Allows interactions with the textarea */
+    z-index: 1; /* Make sure overlay is above the textarea */
+    background-color: #000 !important;
+  }
 
 .btn-borderles {
     border: none;

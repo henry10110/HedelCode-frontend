@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-marco-principal',
