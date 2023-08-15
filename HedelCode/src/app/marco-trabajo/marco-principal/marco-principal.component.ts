@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-marco-principal',
@@ -8,9 +7,9 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 })
 export class MarcoPrincipalComponent {
 
-  codigoHTML: string = '';
-  codigoCSS: string = '';
-  codigoJS: string = '';
+  codigoHTML: string = `<div id="hola"></div>`;
+  codigoCSS: string = `#hola {background-color: #888;}`;
+  codigoJS: string = `document.getElementById('hola').innerHTML = '<p>holaaa, it works!!</p>';`;
   contenido = '';
 
   compilar() {
@@ -26,10 +25,8 @@ export class MarcoPrincipalComponent {
       </html>
     `;
   
-    // Encuentra el iframe en el DOM
     const iframe = document.getElementById('iframeResult');
   
-    // Establece el atributo srcdoc del iframe con el contenido generado
     if (iframe) {
       (iframe as HTMLIFrameElement).srcdoc = this.contenido;
     }

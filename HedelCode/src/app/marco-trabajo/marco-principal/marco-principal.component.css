@@ -46,18 +46,33 @@ textarea {
     height: 100% !important;
     background-color: #000 !important;
     border: none;
-    color: #eee !important;
+    color: transparent !important;
     caret-color: white !important;
+    padding: 14px !important;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
 }
 
 code {
-    background-color: #000;
+    background-color: transparent;
     color:lightskyblue;
+    height: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+}
+
+pre {
+    background-color: transparent !important;
+    margin-bottom: 0px;
+    height: 100%;
 }
 
 .form-floating {
     position: relative;
-    background-color: #000 !important;
+    background-color: transparent !important;
   }
   
 .highlight-overlay {
@@ -68,12 +83,13 @@ code {
     bottom: 0;
     pointer-events: none; /* Allows interactions with the textarea */
     z-index: 1; /* Make sure overlay is above the textarea */
-    background-color: #000 !important;
+    background-color: transparent !important;
   }
 
 .btn-borderles {
     border: none;
-    background-color: transparent;    
+    background-color: transparent; 
+    color: aliceblue !important;   
 }
 
 .section-assets {
