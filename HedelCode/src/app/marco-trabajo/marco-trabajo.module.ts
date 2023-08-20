@@ -4,8 +4,8 @@ import { MarcoPrincipalComponent } from './marco-principal/marco-principal.compo
 import { RouterModule } from '@angular/router';
 import { GestorArchivosComponent } from './gestor-archivos/gestor-archivos.component';
 import { FormsModule } from '@angular/forms';
-import { GestorCodeComponent } from './gestor-code/gestor-code.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { ItemComponent } from './item/item.component';
 
 
 
@@ -13,7 +13,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
   declarations: [
     MarcoPrincipalComponent,
     GestorArchivosComponent,
-    GestorCodeComponent
+    ItemComponent
   ], //declaramos los componentes internos
   exports: [MarcoPrincipalComponent], //para exportar componentes, pero solo los necesarios
   imports: [

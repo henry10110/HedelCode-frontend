@@ -1,0 +1,11 @@
+.app-item {
+    padding-left: 10px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.app-item:hover {
+    background-color: #3434348a;
+}
+
+

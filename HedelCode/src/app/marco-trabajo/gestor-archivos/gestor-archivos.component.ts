@@ -7,19 +7,46 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class GestorArchivosComponent {
 
+  rango = 1;
+
+  directorioRaiz = [
+    {
+      nombre: 'carpeta 1',
+      contenido: [
+        {
+          nombre: 'word.docx'
+        },
+        {
+          nombre: 'excel.xls'
+        },
+        {
+          nombre: 'carpeta 2',
+          contenido: [
+            {
+              nombre: 'ultimafoto.jpg'
+            },
+            {
+              nombre: 'carpeta 3',
+              contenido: [
+                {
+                  nombre: 'esta si es la ultima.jpg'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      nombre: 'foto.jpg'
+    },
+    {
+      nombre: 'imagen.png'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {}
-
-  @ViewChild('miElemento', {static: true}) miElementoRef!: ElementRef;
-
-  cambiarLista() {
-    const sublista = this.miElementoRef.nativeElement;
-    if (sublista.style.display === 'none') {  
-      sublista.style.display = 'block';
-    } else {
-      sublista.style.display = 'none';
-    }
-  }
 
 }

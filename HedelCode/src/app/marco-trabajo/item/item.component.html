@@ -1,0 +1,6 @@
+<div (click)="estado()" class="app-item" [style.marginLeft.px]="rango - 16">
+    {{ item.nombre }}
+</div>
+<div *ngIf="item.contenido && expanded">
+    <app-item *ngFor="let contenido of item.contenido" [item]="contenido" [rango]="rango"></app-item>
+</div>
