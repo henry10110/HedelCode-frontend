@@ -9,44 +9,47 @@ export class GestorArchivosComponent {
 
   rango = 1;
 
-  directorioRaiz = [
-    {
-      nombre: 'carpeta 1',
-      contenido: [
-        {
-          nombre: 'word.docx'
-        },
-        {
-          nombre: 'excel.xls'
-        },
-        {
-          nombre: 'carpeta 2',
-          contenido: [
-            {
-              nombre: 'ultimafoto.jpg'
-            },
-            {
-              nombre: 'carpeta 3',
-              contenido: [
-                {
-                  nombre: 'esta si es la ultima.jpg'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      nombre: 'foto.jpg'
-    },
-    {
-      nombre: 'imagen.png'
-    }
-  ];
+  directorioRaiz = {
+    idArchivos: "",
+    contenido: [
+      {
+        nombre: 'carpeta 1',
+        contenido: [
+          {
+            nombre: 'word.docx'
+          },
+          {
+            nombre: 'excel.xls'
+          },
+          {
+            nombre: 'carpeta 2',
+            contenido: [
+              {
+                nombre: 'ultimafoto.jpg'
+              },
+              {
+                nombre: 'carpeta 3',
+                contenido: [
+                  {
+                    nombre: 'esta si es la ultima.jpg'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        nombre: 'foto.jpg'
+      },
+      {
+        nombre: 'imagen.png'
+      }
+    ]
+  };
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 }
