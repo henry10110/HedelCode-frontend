@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Directorio } from 'app/interfaces';
+import { DirectoriosService } from 'app/services/directorios.service';
+import { UsuariosService } from 'app/services/usuarios.service';
 
 @Component({
   selector: 'app-gestor-archivos',
@@ -7,49 +10,27 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class GestorArchivosComponent {
 
+  constructor(private directorioServicio: DirectoriosService) { }
+
+  idDirectorio = '64e6e1370954499a618a5841';
+
+  ngOnInit(): void {
+    this.getDirectorio();
+   }
+
   rango = 1;
 
-  directorioRaiz = {
-    idArchivos: "",
-    contenido: [
-      {
-        nombre: 'carpeta 1',
-        contenido: [
-          {
-            nombre: 'word.docx'
-          },
-          {
-            nombre: 'excel.xls'
-          },
-          {
-            nombre: 'carpeta 2',
-            contenido: [
-              {
-                nombre: 'ultimafoto.jpg'
-              },
-              {
-                nombre: 'carpeta 3',
-                contenido: [
-                  {
-                    nombre: 'esta si es la ultima.jpg'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        nombre: 'foto.jpg'
-      },
-      {
-        nombre: 'imagen.png'
-      }
-    ]
+  directorioRaiz:Directorio = 
+  {
+    contenido: []
   };
 
-  constructor() { }
+  getDirectorio() {
+    this.directorioServicio.getAnDirectory(this.idDirectorio).subscribe(data => {
+      console.log(data);
+      this.directorioRaiz = data;
+    })
+  }
 
-  ngOnInit(): void { }
 
 }

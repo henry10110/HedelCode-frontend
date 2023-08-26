@@ -5,39 +5,38 @@
     </div>
 
     <div class="body">
-        <div class="formulario">
+        <form class="formulario" novalidate [formGroup]="registroForm" (ngSubmit)="crearDirectorio()">
             <div style="display: flex; justify-content: center;">
                 <h1>Registro</h1>
             </div>
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="nombre completo">
-                <label for="floatingInput">Nombre completo</label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="usuario" formControlName="nombre" value="">
+                <label for="floatingInput">Nombre usuario</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" value="">
                 <label for="floatingInput">Correo electronico</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="nick123">
-                <label for="floatingPassword">Nombre de usuario</label>
-            </div>
             <div class="form-floating mb-2">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="passw" value="">
                 <label for="floatingPassword">contraseña</label>
             </div>
             <div class="form-floating mb-2">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="passw2" value="">
                 <label for="floatingPassword">Verifica tu contraseña</label>
+                <small *ngIf="registroForm.get('passw2')?.hasError('mismatch')">
+                    Las contraseñas no coinciden.
+                </small>
             </div>
             <div style="display: flex; justify-content: space-between;">
                 <a href="#">Registrese con Facebook</a>
                 <a [routerLink]="['/sesion']"  >Iniciar sesion</a>
             </div>
             <div style="display: flex; justify-content: center;">
-                <button type="button" class="btn btn-secondary"
+                <button type="submit" class="btn btn-secondary"
                     style="margin: 15px; width: 150px;">Registrarse</button>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="foot"></div>

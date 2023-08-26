@@ -10,6 +10,7 @@ import { PromocionalModule } from './promocional/promocional.module';
 import { RegistroSesionModule } from './registro-sesion/registro-sesion.module';
 import { SnippetModule } from './snippet/snippet.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     SnippetModule,
     PlanesModule,
     FormsModule,
-    HighlightModule
+    HighlightModule,
+    HttpClientModule
   ],
   providers: [ {
     provide: HIGHLIGHT_OPTIONS,
