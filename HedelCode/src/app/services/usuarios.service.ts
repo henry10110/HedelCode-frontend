@@ -10,14 +10,24 @@ export class UsuariosService {
 
   url = 'http://localhost:8888/usuarios';
 
+  idUsuario:String = '';
+
   constructor(private http:HttpClient) { }
+
+  setIdUsuario(id: String) {
+    this.idUsuario = id;
+  };
+
+  getIdUsuario() {
+    return this.idUsuario;
+  }
 
   getAllUsers():Observable<Usuario> {
 
     return this.http.get(this.url+'/');
   };
 
-  postRegistrarUsuario( req_body: any):Observable<Usuario> {
+  postRegistrarUsuario( req_body: Usuario):Observable<Usuario> {
 
     return this.http.post(this.url+'/', req_body);
   };

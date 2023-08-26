@@ -12,7 +12,7 @@ export class GestorArchivosComponent {
 
   constructor(private directorioServicio: DirectoriosService) { }
 
-  idDirectorio = '64e6e1370954499a618a5841';
+  idDirectorio = this.directorioServicio.getMyDirectorio();
 
   ngOnInit(): void {
     this.getDirectorio();

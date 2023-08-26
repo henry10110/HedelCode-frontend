@@ -10,7 +10,17 @@ export class DirectoriosService {
 
   url = 'http://localhost:8888/directorios';
 
+  myDirectorio:String = '';
+
   constructor(private http:HttpClient) { }
+
+  setMyDirectorio(id: String) {
+    this.myDirectorio = id;
+  };
+
+  getMyDirectorio() {
+    return this.myDirectorio;
+  }
 
   postCrearDirectorio( req_body: any):Observable<Directorio> {//el body puede ser lo que sea
 

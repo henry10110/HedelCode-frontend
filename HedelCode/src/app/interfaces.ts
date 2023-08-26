@@ -11,7 +11,7 @@ export interface Usuario {
 };
 
 export interface Directorio {
-  _id?: String | null;
+  _id?: String;
   contenido?: []
 }
 

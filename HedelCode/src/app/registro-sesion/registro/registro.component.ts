@@ -15,7 +15,7 @@ export class RegistroComponent {
 
   registroForm!: FormGroup;
   usuario: Usuario = {};
-  myDirectory: String = '';
+  myDirectory: String = this.directorioServicio.getMyDirectorio();
   usuarioCreado: Usuario = {};
   PasswValidator = false;
 
@@ -45,14 +45,14 @@ export class RegistroComponent {
     })
   }
 
-  registrarUsuario() {
+  registrarUsuario(idDir: String) {
     var usuario = this.registroForm.value;
 
     this.usuario = {
       nombre: usuario.nombre,
       correo: usuario.email,
       contrasena: usuario.passw,
-      idDirectorio: this.myDirectory,
+      idDirectorio: idDir,
       descripcion: "",
       plan: 1
     };
@@ -60,26 +60,21 @@ export class RegistroComponent {
     this.usuarioServicio.postRegistrarUsuario(this.usuario).subscribe(data => {
       this.usuarioCreado = data;
       this.registroForm.reset();
-      console.log(this.usuarioCreado);
+
+
+      this.router.navigate(['/controlUsuario']);
     })
 
-    this.router.navigate(['/controlUsuario']);
   };
 
-  async crearDirectorio() {
+  crearDirectorio() {
 
-    const data = await this.directorioServicio.postCrearDirectorio({}).toPromise();
-
-    if (data !== undefined) {
-      if (data._id) {
-        this.myDirectory = data._id;
-        console.log(this.myDirectory);
-
-        if (this.myDirectory != null) {
-          this.registrarUsuario();
-        }
+    this.directorioServicio.postCrearDirectorio({}).subscribe(data=> {
+      if(data._id) {
+        this.directorioServicio.setMyDirectorio(data._id);
+      this.registrarUsuario(data._id);
       }
-    };
+    })
 
   };
 
