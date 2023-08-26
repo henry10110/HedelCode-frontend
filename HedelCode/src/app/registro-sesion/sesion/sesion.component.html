@@ -5,16 +5,19 @@
     </div>
 
     <div class="body">
-        <div class="formulario">
+        <form class="formulario" novalidate [formGroup]="loginForm" (ngSubmit)="logUser()">
             <div style="display: flex; justify-content: center;">
                 <h1>Iniciar Sesion</h1>
             </div>
+            <p *ngIf="login" style="color: red;">
+                credenciales incorrectas.
+            </p>
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="nombre completo">
+                <input type="text" class="form-control" id="floatingInput" placeholder="nombre completo" formControlName="nombre" value="">
                 <label for="floatingInput">usuario</label>
             </div>
             <div class="form-floating mb-2">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="passw" value="">
                 <label for="floatingPassword">contraseña</label>
             </div>
             <div style="display: flex; justify-content: space-between;">
@@ -22,10 +25,10 @@
                 <a [routerLink]="['/registro']" >Registrarse</a>
             </div>
             <div style="display: flex; justify-content: center;">
-                <button type="button" class="btn btn-secondary"
+                <button type="submit" class="btn btn-secondary"
                     style="margin: 15px; width: 150px;">Iniciar Sesion</button>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="foot"></div>
