@@ -34,6 +34,7 @@ export class RegistroComponent {
         this.validatePasswords();
       });
 
+      
   }
 
   crearRegistroForm(): void {

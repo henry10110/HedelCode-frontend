@@ -4,15 +4,15 @@ export interface Usuario {
   correo?: String;
   contrasena?: String;
   idDirectorio?: String;
-  archivosCompartidos?: [];
+  archivosCompartidos?: Array<any>;
   descripcion?: String;
-  imagenes?: [];
+  imagenes?: Array<any>;
   plan?: Number
 };
 
 export interface Directorio {
   _id?: String;
-  contenido?: []
+  contenido?: Array<any>;
 }
 
 

@@ -1,3 +1,17 @@
-<div>
+<div style="height: 100%; width: 100%;" (contextmenu)="contextMenuOn($event)" (click)="contextMenuOff()">
     <app-item *ngFor="let item of directorioRaiz.contenido" [item]="item" [rango]="rango"></app-item>
+
+    <div class="context-menu" id="contextMenu">
+        <div class="option" (click)="crearCarpeta()">Crear Carpeta</div>
+        <div class="option" (click)="crearArchivo()">Crear Archivo</div>
+    </div>
+
+    <div class="context-menu" id="newCarpeta">
+        <form novalidate [formGroup]="carpetaForm"  (ngSubmit)="crearDirectorio()">
+            <input class="inp" type="text" formControlName="nombre" value="">
+            <button type="submit" class="btn btn-secondary" >ok</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelarDirectorio()">cancel</button>
+        </form>
+    </div>
+
 </div>

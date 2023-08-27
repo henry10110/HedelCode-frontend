@@ -1,2 +1,27 @@
+.context-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
 
+.option {
+    padding: 5px 10px;
+    cursor: pointer;
+}
 
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.btn {
+    margin: 0px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.inp {
+    border: none;
+}

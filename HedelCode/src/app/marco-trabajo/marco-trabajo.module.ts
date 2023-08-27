@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MarcoPrincipalComponent } from './marco-principal/marco-principal.component';
 import { RouterModule } from '@angular/router';
 import { GestorArchivosComponent } from './gestor-archivos/gestor-archivos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ItemComponent } from './item/item.component';
 
@@ -20,6 +20,7 @@ import { ItemComponent } from './item/item.component';
     CommonModule, //importar modulos necesarios como FormModule
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     HighlightModule
   ],
   providers: [{
