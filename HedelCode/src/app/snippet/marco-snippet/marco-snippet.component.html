@@ -21,6 +21,21 @@
         </div>
     </div>
     <div class="body">
-        <div class="codigo"></div>
+        <div class="codigo">
+            <form class="cuadro">
+                <div class="form-floating">
+                  <div class="highlight-overlay">
+                    <pre><code [highlight]="codigo"></code></pre>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    [(ngModel)]="codigo"
+                    [ngModelOptions]="{ standalone: true }"
+                    id="floatingTextarea2"
+                    spellcheck="false"
+                  ></textarea>
+                </div>
+              </form>
+        </div>
     </div>
 </div>

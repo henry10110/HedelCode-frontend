@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MarcoSnippetComponent } from './marco-snippet/marco-snippet.component';
 import { RouterModule } from '@angular/router';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +14,9 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
   imports: [
     CommonModule,
     RouterModule,
-    HighlightModule
+    HighlightModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{
     provide: HIGHLIGHT_OPTIONS,
