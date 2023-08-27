@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Directorio } from 'app/interfaces';
 import { DirectoriosService } from 'app/services/directorios.service';
+import { LocalStorageService } from 'app/services/local-storage.service';
 import { UsuariosService } from 'app/services/usuarios.service';
 
 @Component({
@@ -11,7 +12,9 @@ import { UsuariosService } from 'app/services/usuarios.service';
 })
 export class GestorArchivosComponent {
 
-  constructor(private directorioServicio: DirectoriosService) { }
+  constructor(private directorioServicio: DirectoriosService,
+              private lSService: LocalStorageService
+    ) { }
 
   idDirectorio = this.directorioServicio.getMyDirectorio();
 
@@ -38,7 +41,7 @@ export class GestorArchivosComponent {
   }
 
   getDirectorio() {
-    this.directorioServicio.getAnDirectory(this.idDirectorio).subscribe(data => {
+    this.lSService.getDirectorio().subscribe((data: Directorio) => {
       console.log(data);
       this.directorioRaiz = data;
     })

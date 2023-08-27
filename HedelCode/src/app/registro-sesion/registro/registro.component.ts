@@ -4,6 +4,7 @@ import { DirectoriosService } from 'app/services/directorios.service';
 import { UsuariosService } from 'app/services/usuarios.service';
 import { Directorio, Usuario } from 'app/interfaces';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'app/services/local-storage.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class RegistroComponent {
 
   constructor(private usuarioServicio: UsuariosService,
     private directorioServicio: DirectoriosService,
+    private lSService: LocalStorageService,
     private router: Router
   ) {
 
@@ -34,7 +36,7 @@ export class RegistroComponent {
         this.validatePasswords();
       });
 
-      
+
   }
 
   crearRegistroForm(): void {
@@ -59,6 +61,7 @@ export class RegistroComponent {
     };
 
     this.usuarioServicio.postRegistrarUsuario(this.usuario).subscribe(data => {
+      this.lSService.setUsuario(data);
       this.usuarioCreado = data;
       this.registroForm.reset();
 
@@ -70,10 +73,11 @@ export class RegistroComponent {
 
   crearDirectorio() {
 
-    this.directorioServicio.postCrearDirectorio({}).subscribe(data=> {
-      if(data._id) {
+    this.directorioServicio.postCrearDirectorio({}).subscribe(data => {
+      if (data._id) {
         this.directorioServicio.setMyDirectorio(data._id);
-      this.registrarUsuario(data._id);
+        this.lSService.setDirectorio(data);
+        this.registrarUsuario(data._id);
       }
     })
 
